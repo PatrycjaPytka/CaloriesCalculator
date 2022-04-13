@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">NanteCalories</string>
+    <string name="addMealBtn">Dodaj posiłek</string>
+    <string name="eatenCaloriesTxt">Ilość spożytych kalorii: </string>
+    <string name="changeCaloriesLimit">Edytuj limit</string>
+    <string name="CaloriesLimitLabel">Twój dzienny limit kalorii: </string>
+    <string name="changeCaloriesPopupTitle">Twój dzienny limit kalorii: </string>
+    <string name="leftCaloriesLabel">Pozostało kalorii: </string>
+</resources>
