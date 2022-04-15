@@ -6,4 +6,12 @@
     <string name="CaloriesLimitLabel">Twój dzienny limit kalorii: </string>
     <string name="changeCaloriesPopupTitle">Twój dzienny limit kalorii: </string>
     <string name="leftCaloriesLabel">Pozostało kalorii: </string>
+    <string name="ingredientName">Nazwa składnika: </string>
+    <string name="ingredientKcal">Ilość kalorii: </string>
+    <string name="ingrDialogMess">Dodaj składnik</string>
+    <string name="ingrDialogAdd">Dodaj</string>
+    <string name="ingrDialogCancel">Anuluj</string>
+    <string name="addMealTitle">Stwórz posiłek</string>
+    <string name="addIngrBtn">Dodaj składnik</string>
+    <string name="saveMealBtn">Zapisz posiłek</string>
 </resources>

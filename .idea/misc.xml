@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/M800/Desktop/NanteCalories/app/src/main/res/layout/activity_main.xml" value="0.19479166666666667" />
+        <entry key="..\:/Users/M800/Desktop/NanteCalories/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Users/M800/Desktop/NanteCalories/app/src/main/res/layout/activity_meal.xml" value="0.1" />
+        <entry key="..\:/Users/M800/Desktop/NanteCalories/app/src/main/res/layout/ingredient_popup.xml" value="0.1" />
         <entry key="..\:/Users/user/Desktop/NanteCalories/app/src/main/res/drawable/circle.xml" value="1.2821428571428573" />
         <entry key="..\:/Users/user/Desktop/NanteCalories/app/src/main/res/layout/activity_main.xml" value="0.25" />
       </map>

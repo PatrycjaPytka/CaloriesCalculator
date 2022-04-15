@@ -28,10 +28,10 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.339"
+        app:layout_constraintHorizontal_bias="0.288"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/addMeal"
-        app:layout_constraintVertical_bias="0.079" />
+        app:layout_constraintVertical_bias="0.061" />
 
     <TextView
         android:id="@+id/eatenCalAmount"
@@ -55,10 +55,9 @@
         android:progressDrawable="@drawable/circle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.444"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/caloriesLeftLabel"
-        app:layout_constraintVertical_bias="0.118"
+        app:layout_constraintVertical_bias="0.75"
         tools:progress="60" />
 
     <TextView
@@ -82,7 +81,7 @@
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/caloriesLimitLabel"
-        app:layout_constraintVertical_bias="0.176" />
+        app:layout_constraintVertical_bias="0.178" />
 
     <TextView
         android:id="@+id/caloriesLimitLabel"
@@ -93,10 +92,10 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.333"
+        app:layout_constraintHorizontal_bias="0.331"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/eatenCaloriesBar"
-        app:layout_constraintVertical_bias="0.117" />
+        app:layout_constraintVertical_bias="0.118" />
 
     <TextView
         android:id="@+id/caloriesLimitTxt"
@@ -119,9 +118,9 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Large"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.262"
+        app:layout_constraintHorizontal_bias="0.224"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/eatenCalories"
-        app:layout_constraintVertical_bias="0.036" />
+        app:layout_constraintVertical_bias="0.021" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
