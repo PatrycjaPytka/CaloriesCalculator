@@ -14,4 +14,8 @@
     <string name="addMealTitle">Stwórz posiłek</string>
     <string name="addIngrBtn">Dodaj składnik</string>
     <string name="saveMealBtn">Zapisz posiłek</string>
+    <string name="dailyKcalDialogTitle">Dzienny limit kalorii</string>
+    <string name="dailyKcal">Podaj dzienny limit</string>
+    <string name="dailyKcalDialogSave">Zapisz</string>
+    <string name="dailyKcalDialogCancel">Anuluj</string>
 </resources>
