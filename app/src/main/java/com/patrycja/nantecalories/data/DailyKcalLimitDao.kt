@@ -8,11 +8,12 @@ import com.patrycja.nantecalories.fragments.dailyKcalLimit.DailyKcalLimit
 @Dao
 interface DailyKcalLimitDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    fun addDailyKcalLimit(dailyKcalLimit: DailyKcalLimit)
+    suspend fun addDailyKcalLimit(dailyKcalLimit: DailyKcalLimit)
 
-    @Query("SELECT * FROM daily_kcal_table ORDER BY limitId ASC")
+    @Query("SELECT limitId, kcal FROM daily_kcal_table ORDER BY limitId DESC LIMIT 1")
     fun readAllData(): LiveData<List<DailyKcalLimit>>
 
-    @Update
-    fun updateDailyKcalLimit(dailyKcalLimit: DailyKcalLimit)
+    @Query("DELETE FROM daily_kcal_table")
+    suspend fun deleteAllData()
+
 }

@@ -1,13 +1,13 @@
 package com.patrycja.nantecalories.data
 
 import android.content.Context
-import androidx.room.Database
-import androidx.room.Room
-import androidx.room.RoomDatabase
+import androidx.room.*
+import com.patrycja.nantecalories.fragments.meal.Ingredient
 import com.patrycja.nantecalories.fragments.meal.Meal
 
 
-@Database(entities = [Meal::class], version = 1, exportSchema = false)
+@Database(entities = [Meal::class, Ingredient::class], version = 1, exportSchema = false)
+@TypeConverters(Coverters::class)
 abstract class MealDatabase: RoomDatabase() {
     abstract fun mealDao(): MealDao
 

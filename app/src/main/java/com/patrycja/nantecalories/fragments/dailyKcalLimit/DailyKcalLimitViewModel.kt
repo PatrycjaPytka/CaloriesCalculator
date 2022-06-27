@@ -5,8 +5,10 @@ import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import com.patrycja.nantecalories.data.DailyKcalLimitDatabase
+import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlin.coroutines.CoroutineContext
 
 
 class DailyKcalLimitViewModel(application: Application): AndroidViewModel(application) {
@@ -25,9 +27,10 @@ class DailyKcalLimitViewModel(application: Application): AndroidViewModel(applic
         }
     }
 
-    fun updateDailyKcalLimit(dailyKcalLimit: DailyKcalLimit) {
+    fun deleteAllData() {
         viewModelScope.launch(Dispatchers.IO) {
-            repository.updateDailyKcalLimit(dailyKcalLimit)
+            repository.deleteAllData()
         }
     }
+
 }

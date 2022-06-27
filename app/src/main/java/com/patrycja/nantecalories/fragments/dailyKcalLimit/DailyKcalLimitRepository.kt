@@ -11,7 +11,7 @@ class DailyKcalLimitRepository(private val dailyKcalLimitDao: DailyKcalLimitDao)
         dailyKcalLimitDao.addDailyKcalLimit(dailyKcalLimit)
     }
 
-    suspend fun updateDailyKcalLimit(dailyKcalLimit: DailyKcalLimit) {
-        dailyKcalLimitDao.updateDailyKcalLimit(dailyKcalLimit)
+    suspend fun deleteAllData() {
+        dailyKcalLimitDao.deleteAllData()
     }
 }
