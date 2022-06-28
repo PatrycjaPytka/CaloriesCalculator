@@ -12,6 +12,7 @@ import kotlinx.coroutines.launch
 class MealViewModel(application: Application): AndroidViewModel(application) {
     val readAllMealData: LiveData<List<Meal>>
     val readAllIngrData: LiveData<List<Ingredient>>
+
     private val repository: MealRepository
 
     init {

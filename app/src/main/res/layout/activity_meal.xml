@@ -2,10 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:windowSoftInputMode="adjustPan|adjustResize"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".fragments.lists.IngredientListFragment">
+    android:layout_height="match_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,7 +19,7 @@
             android:id="@+id/addMealTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="28dp"
+            android:layout_marginTop="10dp"
             android:text="@string/addMealTitle"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
@@ -71,15 +69,8 @@
             android:layout_below="@id/appendIngrLine"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:nestedScrollingEnabled="true"
+            android:scrollbars="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
-
-        <Button
-            android:id="@+id/saveMeal"
-            android:layout_width="wrap_content"
-            android:layout_height="59dp"
-            android:layout_marginBottom="48dp"
-            android:text="@string/saveMealBtn" />
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -90,14 +81,26 @@
                 android:id="@+id/totalKcalLabel"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Total kcal: " />
+                android:text="Total kcal: "
+                android:textSize="16sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/totalMealKcal"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="0" />
+                android:text="0"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
         </LinearLayout>
+
+        <Button
+            android:id="@+id/saveMeal"
+            android:layout_width="wrap_content"
+            android:layout_height="59dp"
+            android:layout_marginBottom="48dp"
+            android:text="@string/saveMealBtn" />
 
     </LinearLayout>
 

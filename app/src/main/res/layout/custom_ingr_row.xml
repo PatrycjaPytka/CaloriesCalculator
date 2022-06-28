@@ -9,7 +9,7 @@
 
     <TextView
         android:id="@+id/ingrRowName"
-        android:layout_width="208dp"
+        android:layout_width="153dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="12dp"
@@ -21,13 +21,15 @@
 
     <TextView
         android:id="@+id/ingrRowKcal"
-        android:layout_width="156dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:fontFamily="sans-serif"
         android:text="350 kcal"
+        android:textAlignment="textEnd"
         android:textSize="18sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toEndOf="@+id/ingrName"
+        app:layout_constraintStart_toEndOf="@+id/ingrRowName"
         app:layout_constraintTop_toTopOf="parent" />
+
 </LinearLayout>

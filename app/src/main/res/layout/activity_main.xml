@@ -1,126 +1,193 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:background="@color/background"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/addMeal"
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="30dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="left"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/changeCaloriesLimitBtn"
+                android:layout_width="153dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/navbar"
+                android:text="@string/changeCaloriesLimit" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="right"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/addMeal"
+                android:backgroundTint="@color/navbar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/addMealBtn" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/caloriesLimitLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:labelFor="@id/caloriesLimitTxt"
+            android:text="@string/CaloriesLimitLabel"
+            android:textStyle="bold"
+            android:fontFamily="serif"
+            android:textColor="@color/white"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <TextView
+            android:id="@+id/caloriesLimitTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:fontFamily="serif"
+            android:layout_marginLeft="10dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/eatenCalories"
+            style="@style/Widget.AppCompat.TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:labelFor="@id/eatenCalAmount"
+            android:text="@string/eatenCaloriesTxt"
+            android:fontFamily="serif"
+            android:textColor="@color/white"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <TextView
+            android:id="@+id/eatenCalAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:fontFamily="serif"
+            android:textColor="@color/white"
+            android:layout_marginLeft="10dp"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="15dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/caloriesLeftLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="@string/leftCaloriesLabel"
+            android:fontFamily="serif"
+            android:textColor="@color/white"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+        <TextView
+            android:id="@+id/caloriesLeftAmount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:text="0"
+            android:fontFamily="serif"
+            android:textColor="@color/white"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/addMealBtn"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.864"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.048" />
+        android:layout_marginTop="15dp"
+        android:layout_gravity="center">
 
-    <TextView
-        android:id="@+id/eatenCalories"
-        style="@style/Widget.AppCompat.TextView"
-        android:layout_width="wrap_content"
+        <ProgressBar
+            android:id="@+id/eatenCaloriesBar"
+            android:layout_width="298dp"
+            android:layout_height="270dp"
+            android:indeterminateOnly="false"
+            android:progressDrawable="@drawable/circle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            tools:progress="60" />
+
+        <TextView
+            android:id="@+id/caloriesPercTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="60%"
+            android:fontFamily="serif"
+            android:textColor="@color/white"
+            android:textAppearance="@style/TextAppearance.AppCompat.Large"
+            app:layout_constraintBottom_toBottomOf="@+id/eatenCaloriesBar"
+            app:layout_constraintEnd_toEndOf="@+id/eatenCaloriesBar"
+            app:layout_constraintStart_toStartOf="@+id/eatenCaloriesBar"
+            app:layout_constraintTop_toTopOf="@+id/eatenCaloriesBar" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:labelFor="@id/eatenCalAmount"
-        android:text="@string/eatenCaloriesTxt"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.288"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/addMeal"
-        app:layout_constraintVertical_bias="0.061" />
+        android:layout_margin="15dp"
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/eatenCalAmount"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="-"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.133"
-        app:layout_constraintStart_toEndOf="@+id/eatenCalories"
-        app:layout_constraintTop_toBottomOf="@+id/addMeal"
-        app:layout_constraintVertical_bias="0.079" />
+        <TextView
+            android:id="@+id/mealsLabel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="serif"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:text="@string/mealsListLabel" />
 
-    <ProgressBar
-        android:id="@+id/eatenCaloriesBar"
-        android:layout_width="231dp"
-        android:layout_height="281dp"
-        android:layout_marginBottom="240dp"
-        android:indeterminateOnly="false"
-        android:progressDrawable="@drawable/circle"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/caloriesLeftLabel"
-        app:layout_constraintVertical_bias="0.75"
-        tools:progress="60" />
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mealRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/caloriesPercTxt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="60%"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toBottomOf="@+id/eatenCaloriesBar"
-        app:layout_constraintEnd_toEndOf="@+id/eatenCaloriesBar"
-        app:layout_constraintStart_toStartOf="@+id/eatenCaloriesBar"
-        app:layout_constraintTop_toTopOf="@+id/eatenCaloriesBar" />
-
-    <Button
-        android:id="@+id/changeCaloriesLimitBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/changeCaloriesLimit"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/caloriesLimitLabel"
-        app:layout_constraintVertical_bias="0.178" />
-
-    <TextView
-        android:id="@+id/caloriesLimitLabel"
-        android:layout_width="217dp"
-        android:layout_height="29dp"
-        android:labelFor="@id/caloriesLimitTxt"
-        android:text="@string/CaloriesLimitLabel"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.331"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eatenCaloriesBar"
-        app:layout_constraintVertical_bias="0.118" />
-
-    <TextView
-        android:id="@+id/caloriesLimitTxt"
-        android:layout_width="87dp"
-        android:layout_height="29dp"
-        android:text="-"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.186"
-        app:layout_constraintStart_toEndOf="@+id/caloriesLimitLabel"
-        app:layout_constraintTop_toBottomOf="@+id/eatenCaloriesBar"
-        app:layout_constraintVertical_bias="0.117" />
-
-    <TextView
-        android:id="@+id/caloriesLeftLabel"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/leftCaloriesLabel"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.224"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/eatenCalories"
-        app:layout_constraintVertical_bias="0.021" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

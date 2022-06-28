@@ -13,8 +13,6 @@ class IngredientListAdapter: RecyclerView.Adapter<IngredientListAdapter.MyViewHo
 
     private var ingredientList = emptyList<Ingredient>()
 
-    class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {}
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.custom_ingr_row, parent, false))
     }
@@ -26,14 +24,29 @@ class IngredientListAdapter: RecyclerView.Adapter<IngredientListAdapter.MyViewHo
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val currentItem = ingredientList[position]
 
-        Log.d("holder ", holder.itemView.toString())
-        holder.itemView.findViewById<TextView>(R.id.ingrRowName).text = currentItem.name
-        holder.itemView.findViewById<TextView>(R.id.ingrRowKcal).text = currentItem.kcal.toString()
-
+        holder.itemName.text = currentItem.name
+        holder.itemKcal.text = currentItem.kcal.toString()
     }
 
-    fun setData(ingredient: List<Ingredient>) {
-        this.ingredientList = ingredient
+    fun setData(ingredient: List<Ingredient>, mealId: Int) {
+        Log.d("Listt ingr", ingredient.toString())
+        var ingrList = emptyList<Ingredient>()
+        for (item in ingredient) {
+            if (item.meal == mealId) {
+                ingrList += item
+            }
+        }
+        this.ingredientList = ingrList
         notifyDataSetChanged()
+    }
+
+    inner class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
+        var itemName: TextView
+        var itemKcal: TextView
+
+        init {
+            itemName = itemView.findViewById(R.id.ingrRowName)
+            itemKcal = itemView.findViewById(R.id.ingrRowKcal)
+        }
     }
 }

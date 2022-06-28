@@ -1,13 +1,12 @@
 <resources>
-    <string name="app_name">NanteCalories</string>
+    <string name="app_name">Licznik Kalorii</string>
     <string name="addMealBtn">Dodaj posiłek</string>
     <string name="eatenCaloriesTxt">Ilość spożytych kalorii: </string>
     <string name="changeCaloriesLimit">Edytuj limit</string>
     <string name="CaloriesLimitLabel">Twój dzienny limit kalorii: </string>
-    <string name="changeCaloriesPopupTitle">Twój dzienny limit kalorii: </string>
     <string name="leftCaloriesLabel">Pozostało kalorii: </string>
-    <string name="ingredientName">Nazwa składnika </string>
-    <string name="ingredientKcal">Ilość kalorii </string>
+    <string name="ingredientName">Nazwa składnika</string>
+    <string name="ingredientKcal">Kaloryczność</string>
     <string name="ingrDialogMess">Dodaj składnik</string>
     <string name="ingrDialogAdd">Dodaj</string>
     <string name="ingrDialogCancel">Anuluj</string>
@@ -16,8 +15,9 @@
     <string name="saveMealName">Zapisz</string>
     <string name="addIngrBtn">Dodaj składnik</string>
     <string name="saveMealBtn">Zapisz posiłek</string>
-    <string name="dailyKcalDialogTitle">Dzienny limit kalorii</string>
+    <string name="dailyKcalDialogTitle">Dzienny limit kalorii:</string>
     <string name="dailyKcal">Podaj dzienny limit</string>
     <string name="dailyKcalDialogSave">Zapisz</string>
     <string name="dailyKcalDialogCancel">Anuluj</string>
+    <string name="mealsListLabel">Posiłki: </string>
 </resources>
