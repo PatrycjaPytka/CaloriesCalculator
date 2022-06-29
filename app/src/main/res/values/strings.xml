@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Licznik Kalorii</string>
+    <string name="app_name">LiczKalorie - Kontroluj masę!</string>
     <string name="addMealBtn">Dodaj posiłek</string>
     <string name="eatenCaloriesTxt">Ilość spożytych kalorii: </string>
     <string name="changeCaloriesLimit">Edytuj limit</string>

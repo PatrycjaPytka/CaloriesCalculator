@@ -1,7 +1,6 @@
 package com.patrycja.nantecalories.fragments.lists
 
 import android.os.Build
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -42,9 +41,8 @@ class MealListAdapter: RecyclerView.Adapter<MealListAdapter.MealViewHolder>() {
             val todayDate = LocalDate.now().format(formatDate)
             val mealDate = LocalDate.parse(item.date, formatString).format(formatDate)
 
-            if (todayDate == mealDate && item.name.isNotEmpty()) {
+            if (todayDate == mealDate && item.name.isNotEmpty() && (item.kcal.toString().toFloat() > 0F)) {
                 mealLst += item
-                Log.d("Date", item.name)
             }
         }
         this.mealList = mealLst
