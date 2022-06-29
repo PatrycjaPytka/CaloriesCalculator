@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="horizontal"
-    android:padding="1sp">
+    android:padding="1sp"
+    android:background="@color/background">
 
     <TextView
         android:id="@+id/ingrRowName"
@@ -13,8 +14,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="10dp"
         android:layout_marginTop="12dp"
-        android:fontFamily="sans-serif"
+        android:fontFamily="serif"
         android:text="@string/ingredientName"
+        android:textColor="@color/white"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -24,8 +26,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
-        android:fontFamily="sans-serif"
+        android:fontFamily="serif"
         android:text="350 kcal"
+        android:textColor="@color/white"
         android:textAlignment="textEnd"
         android:textSize="18sp"
         android:textStyle="bold"

@@ -6,6 +6,7 @@ import android.widget.Button
 import android.content.Intent
 import android.os.Build
 import android.util.Log
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.annotation.RequiresApi
 import androidx.lifecycle.Observer
@@ -16,6 +17,7 @@ import com.patrycja.nantecalories.fragments.dailyKcalLimit.DailyKcalLimit
 import com.patrycja.nantecalories.fragments.dailyKcalLimit.DailyKcalLimitViewModel
 import com.patrycja.nantecalories.fragments.lists.MealListAdapter
 import com.patrycja.nantecalories.fragments.meal.MealViewModel
+import org.w3c.dom.Text
 import java.time.LocalDate
 import java.time.format.DateTimeFormatter
 
@@ -46,9 +48,11 @@ class MainActivity : AppCompatActivity() {
         adapter = MealListAdapter()
         recyclerView.adapter = adapter
 
+        val eatenKcalBar: ProgressBar = findViewById(R.id.eatenCaloriesBar)
         val caloriesLimitBtn: Button = findViewById(R.id.changeCaloriesLimitBtn)
         val addMealBtn: Button = findViewById(R.id.addMeal)
         val caloriesLimit: TextView = findViewById(R.id.caloriesLimitTxt)
+        val eatenKcalPerc: TextView = findViewById(R.id.caloriesPercTxt)
         val eatenKcalText: TextView = findViewById(R.id.eatenCalAmount)
         val leftKcalText: TextView = findViewById(R.id.caloriesLeftAmount)
 
@@ -66,10 +70,22 @@ class MainActivity : AppCompatActivity() {
                     eatenKcalText.text = eatenKcal.toString()
                 }
             }
-            leftKcalText.text =
-                (
-                    (caloriesLimit.text).toString().toFloat() - (eatenKcalText.text).toString().toFloat()
-                ).toString()
+            var calcKcal = (caloriesLimit.text).toString().toFloat() - (eatenKcalText.text).toString().toFloat()
+            if (calcKcal < (0).toFloat()) {
+                leftKcalText.setTextColor(resources.getColor(R.color.red))
+            } else if (calcKcal == (0).toFloat()) {
+                leftKcalText.setTextColor(resources.getColor(R.color.warning))
+            } else {
+            leftKcalText.setTextColor(resources.getColor(R.color.white))
+        }
+            leftKcalText.text = calcKcal.toString()
+
+            val calcPercentage = (
+                    ((caloriesLimit.text.toString().toFloat() - leftKcalText.text.toString().toFloat()) * 100) / (caloriesLimit.text).toString().toFloat()
+                    ).toInt()
+
+            eatenKcalBar.progress = calcPercentage
+            eatenKcalPerc.text = "$calcPercentage%"
         })
 
         mMealViewModel.readAllMealData.observe(this, Observer { meal ->
@@ -88,10 +104,20 @@ class MainActivity : AppCompatActivity() {
             var calcKcal = leftKcal.toString().toFloat() - (eatenKcalText.text).toString().toFloat()
             if (calcKcal < (0).toFloat()) {
                 leftKcalText.setTextColor(resources.getColor(R.color.red))
+                Log.d("red", calcKcal.toString())
             } else if (calcKcal == (0).toFloat()) {
                 leftKcalText.setTextColor(resources.getColor(R.color.warning))
+            } else {
+                leftKcalText.setTextColor(resources.getColor(R.color.white))
             }
             leftKcalText.text = (calcKcal).toString()
+
+            val calcPercentage = (
+                    ((caloriesLimit.text.toString().toFloat() - leftKcalText.text.toString().toFloat()) * 100) / (caloriesLimit.text).toString().toFloat()
+                    ).toInt()
+
+            eatenKcalBar.progress = calcPercentage
+            eatenKcalPerc.text = "$calcPercentage%"
         })
 
         addMealBtn.setOnClickListener {

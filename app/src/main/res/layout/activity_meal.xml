@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/background">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -21,6 +22,8 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:text="@string/addMealTitle"
+            android:textColor="@color/white"
+            android:fontFamily="serif"
             android:textAppearance="@style/TextAppearance.AppCompat.Large" />
 
         <EditText
@@ -29,6 +32,9 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="2dp"
             android:layout_marginBottom="2dp"
+            android:textColorHint="@color/white"
+            android:textColor="@color/white"
+            android:fontFamily="serif"
             android:hint="@string/mealName" />
 
         <LinearLayout
@@ -42,6 +48,9 @@
                 android:layout_width="176dp"
                 android:layout_height="match_parent"
                 android:hint="@string/ingredientName"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
+                android:fontFamily="serif"
                 android:inputType="text"
                 tools:ignore="TouchTargetSizeCheck" />
 
@@ -49,8 +58,10 @@
                 android:id="@+id/ingrKcal"
                 android:layout_width="111dp"
                 android:layout_height="46dp"
-                android:fontFamily="sans-serif"
+                android:fontFamily="serif"
                 android:hint="@string/ingredientKcal"
+                android:textColor="@color/white"
+                android:textColorHint="@color/white"
                 android:inputType="number"
                 tools:ignore="TouchTargetSizeCheck" />
 
@@ -82,6 +93,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Total kcal: "
+                android:textColor="@color/white"
+                android:fontFamily="serif"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -90,6 +103,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="0"
+                android:textColor="@color/white"
+                android:fontFamily="serif"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
